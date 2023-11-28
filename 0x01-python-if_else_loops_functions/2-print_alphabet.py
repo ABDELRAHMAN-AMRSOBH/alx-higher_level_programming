@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-for i in range(26):
-    x = 97 + i
-    print(f"{x:c}", end = "")
+for a in range(ord('a'), ord('z') + 1):
+    print("{:s}".format(chr(a)), end="")
