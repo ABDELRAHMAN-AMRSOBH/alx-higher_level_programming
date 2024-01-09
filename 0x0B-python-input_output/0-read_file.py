@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+"""Function That Reads Text"""
 
 
 def read_file(filename=""):
-    with open(filename, "r", encoding="UTF-8") as f:
-        print(f.read(), end="")
+    """Function That Read File Content"""
+    with open(filename) as file:
+        print(file.read(), end="")
