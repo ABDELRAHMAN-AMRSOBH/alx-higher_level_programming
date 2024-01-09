@@ -15,7 +15,7 @@ if __name__ == "__main__":
             code = int(words[-2])
             if code in codes:
                 codes[code] += 1
-        except KeyboardInterrupt:
+        except (KeyboardInterrupt, SystemExit):
             pass
 
     def print_stats():
