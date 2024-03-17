@@ -11,11 +11,11 @@ if __name__ == '__main__':
     host = 'localhost'
     port = 3306
 
-    db = MySQLdb.connect(user=username, password=password, charset="utf8",
+    db = MySQLdb.connect(user=username, password=password,
                          database=dbName, host=host, port=port)
     result = db.cursor()
-    result.execute("""SELECT * FROM states ORDER BY states.id""")
-    row = result.fetchall()
+    result.execute("""SELECT * FROM states ORDER BY id""")
+    rows = result.fetchall()
     for row in rows:
         print(row)
     result.close()
