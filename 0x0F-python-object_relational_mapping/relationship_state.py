@@ -5,7 +5,7 @@ relationship_city.py and relationship_state.py.
 """
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 
 Base = declarative_base()
 
@@ -22,5 +22,6 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
-    cities = relationship("City", back_populates="state",
-                          cascade="all, delete")
+    cities = relationship("City", cascade="all, delete-orphan",
+                          backref=backref("state", cascade="all"),
+                          single_parent=True)
