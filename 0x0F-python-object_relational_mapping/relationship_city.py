@@ -4,8 +4,7 @@ Improve the files model_city.py and model_state.py, and save them as
 relationship_city.py and relationship_state.py.
 """
 from sqlalchemy import Column, Integer, String, ForeignKey
-from model_state import Base, State
-
+from relationship_state import Base
 
 class City(Base):
     """
