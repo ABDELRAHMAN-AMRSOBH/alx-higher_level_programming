@@ -8,16 +8,17 @@ def find_peak(list_of_integers):
     """
         find a peak in O(log(n))
     """
-    if list_of_integers is None or len(list_of_integers) == 0:
+    length = len(list_of_integers)
+    if list_of_integers is None or length == 0:
         return None
 
-    if len(list_of_integers) == 1:
+    if length == 1:
         return list_of_integers[0]
-    if len(list_of_integers) == 2:
+    if length == 2:
         return max(list_of_integers[0], list_of_integers[1])
 
-    mid_idx = int(len(list_of_integers) / 2)
-
+    mid_idx = length // 2
+    
     if list_of_integers[mid_idx - 1] < list_of_integers[mid_idx] and\
        list_of_integers[mid_idx + 1] < list_of_integers[mid_idx]:
         return list_of_integers[mid_idx]
