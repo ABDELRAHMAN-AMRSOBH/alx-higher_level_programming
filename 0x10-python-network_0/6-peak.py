@@ -3,6 +3,7 @@
     find a peak in minmum time
 """
 
+
 def find_peak(list_of_integers):
     """
         find a peak in O(log(n))
@@ -18,7 +19,7 @@ def find_peak(list_of_integers):
     mid_idx = int(len(list_of_integers) / 2)
 
     if list_of_integers[mid_idx - 1] < list_of_integers[mid_idx] and\
-        list_of_integers[mid_idx + 1] < list_of_integers[mid_idx]:
+       list_of_integers[mid_idx + 1] < list_of_integers[mid_idx]:
         return list_of_integers[mid_idx]
     if list_of_integers[mid_idx - 1] >= list_of_integers[mid_idx]:
         a_list = list_of_integers[:mid_idx]
