@@ -17,11 +17,11 @@ def find_peak(list_of_integers):
     if length == 2:
         return max(list_of_integers[0], list_of_integers[1])
 
-    l, r = 0, length - 1
-    while r > l:
-        m = l + (r - l) // 2
+    left, right = 0, length - 1
+    while right > left:
+        m = left + (right - left) // 2
         if list_of_integers[m] > list_of_integers[m + 1]:
-            r = m
+            right = m
         else:
-            l = m + 1
-    return list_of_integers[l]
+            left = m + 1
+    return list_of_integers[left]
